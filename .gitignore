@@ -1,0 +1,6 @@
+# ideal editor
+.idea/
+*/.idea/
+*/target/
+*.iml
+
