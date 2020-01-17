@@ -42,7 +42,7 @@ public class PermissionInterceptor extends HandlerInterceptorAdapter {
         if (needLogin) {
             XxlJobUser loginUser = loginService.ifLogin(request, response);
             if (loginUser == null) {
-                response.sendRedirect(request.getContextPath() + "/toLogin");
+                response.sendRedirect(request.getContextPath() + "/xxl-job/toLogin");
                 //request.getRequestDispatcher("/toLogin").forward(request, response);
                 return false;
             }

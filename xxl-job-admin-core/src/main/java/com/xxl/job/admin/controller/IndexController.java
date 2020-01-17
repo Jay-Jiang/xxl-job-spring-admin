@@ -34,13 +34,13 @@ public class IndexController {
     @Resource
     private LoginService loginService;
 
-    @RequestMapping("/")
+    @RequestMapping(value = {"", "/"})
     public String index(Model model) {
 
         Map<String, Object> dashboardMap = xxlJobService.dashboardInfo();
         model.addAllAttributes(dashboardMap);
 
-        return "index";
+        return "job.index";
     }
 
     @RequestMapping("/chartInfo")
@@ -59,9 +59,9 @@ public class IndexController {
             // HttpSession session = request.getSession();
             // session.setAttribute("I18nUtil", i18nUtil);
 
-            return "redirect:/";
+            return "redirect:/xxl-job/";
         }
-        return "login";
+        return "job.login";
     }
 
     @RequestMapping(value = "login", method = RequestMethod.POST)
@@ -86,7 +86,7 @@ public class IndexController {
 			return "redirect:/toLogin";
 		}*/
 
-        return "help";
+        return "job.help";
     }
 
     @InitBinder
